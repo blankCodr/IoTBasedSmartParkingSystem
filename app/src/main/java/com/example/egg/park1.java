@@ -20,6 +20,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.os.Handler;
 import android.os.HandlerThread;
 import android.view.View;
 import android.widget.TextView;
@@ -29,14 +30,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.logging.Handler;
 import java.util.logging.LogRecord;
 
 public class park1 extends AppCompatActivity {
 
     private static final String API_URL= "http://192.168.1.3/practice/android_api/api.php";
-    private BroadcastReceiver ui_update_receiver;
-    private int counter;
+    private Handler mHandler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,32 +85,30 @@ public class park1 extends AppCompatActivity {
                 startActivity(back_on_click);
             }
         });
+
+        // RUN THIS LINE OF CODES TO UPDATE
+        this.mHandler = new Handler();
+        this.mHandler.postDelayed(mRunnable, 5000);
     }
 
-    public void ui_updater(){
-        IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction(Intent.ACTION_TIME_TICK);
-        ui_update_receiver = new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                counter++;
-                // FETCH DATA FROM THE DATABASE AND SHOW USING THIS METHOD
-                fetch_data();
-            }
-        };
-        registerReceiver(ui_update_receiver, intentFilter);
-    }
+    // KEEP REFRESHING THE ACTIVITY
+    private final Runnable mRunnable = new Runnable() {
+        @Override
+        public void run() {
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        ui_updater();
-    }
+            // FETCH DATA FROM DATABASE
+            fetch_data();
 
+            park1.this.mHandler.postDelayed(mRunnable, 5000);
+        }
+    };
+
+    // STOP REFRESHING WHEN THE BACK BUTTON IS CALLED
     @Override
     protected void onPause() {
         super.onPause();
-        unregisterReceiver(ui_update_receiver);
+        mHandler.removeCallbacks(mRunnable);
+        finish();
     }
 
     // INFO BOX
