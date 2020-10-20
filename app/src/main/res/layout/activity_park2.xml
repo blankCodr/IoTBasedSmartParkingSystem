@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".park2">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.EGG.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/Theme.EGG.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include layout="@layout/content_park2" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/return_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@android:drawable/ic_menu_revert" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/info_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@android:drawable/ic_menu_info_details"
+        android:contentDescription="@string/revert_sign" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginVertical="@dimen/relative_layout_margin_vertical">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="@dimen/arrow_margin_left"
+                android:layout_marginStart="@dimen/arrow_margin_left"
+                android:background="@drawable/ic_baseline_arrow_downward_24"/>
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_row="5"
+                android:layout_column="0"
+                android:layout_marginLeft="@dimen/arrow_margin_left"
+                android:layout_marginStart="@dimen/arrow_margin_left"
+                android:background="@drawable/ic_baseline_subdirectory_arrow_right_24" />
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_row="5"
+                android:layout_column="5"
+                android:rotation="-90"
+                android:background="@drawable/ic_baseline_arrow_downward_24" />
+
+        </GridLayout>
+
+        <TextView
+            android:id="@+id/park_space_1"
+            android:layout_width="@dimen/park_space_width"
+            android:layout_height="@dimen/park_space_height"
+            android:layout_above="@id/park_divider_1"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/park_state_available" />
+
+        <TextView
+            android:id="@+id/park_divider_1"
+            android:layout_width="@dimen/park_divider_width"
+            android:layout_height="@dimen/park_divider_height"
+            android:layout_above="@id/park_space_2"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/park_divider" />
+
+        <TextView
+            android:id="@+id/park_space_2"
+            android:layout_width="@dimen/park_space_width"
+            android:layout_height="@dimen/park_space_height"
+            android:layout_above="@id/park_divider_2"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/park_state_available" />
+
+        <TextView
+            android:id="@+id/park_divider_2"
+            android:layout_width="@dimen/park_divider_width"
+            android:layout_height="@dimen/park_divider_height"
+            android:layout_above="@id/park_space_3"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/park_divider" />
+
+        <TextView
+            android:id="@+id/park_space_3"
+            android:layout_width="@dimen/park_space_width"
+            android:layout_height="@dimen/park_space_height"
+            android:layout_above="@id/park_divider_3"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/park_state_available" />
+
+        <TextView
+            android:id="@+id/park_divider_3"
+            android:layout_width="@dimen/park_divider_width"
+            android:layout_height="@dimen/park_divider_height"
+            android:layout_above="@id/park_space_4"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/park_divider" />
+
+        <TextView
+            android:id="@+id/park_space_4"
+            android:layout_width="@dimen/park_space_width"
+            android:layout_height="@dimen/park_space_height"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="80dp"
+            android:background="@drawable/park_state_available" />
+
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
