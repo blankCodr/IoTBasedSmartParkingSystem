@@ -5,6 +5,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -13,9 +18,19 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.os.Handler;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class park2 extends AppCompatActivity {
+
+    private static final String API_URL= "http://192.168.1.3/practice/android_api/api.php";
+    private Handler mHandler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,8 +78,33 @@ public class park2 extends AppCompatActivity {
                 startActivity(back_on_click);
             }
         });
+
+        // RUN THIS LINE OF CODES TO UPDATE
+        this.mHandler = new Handler();
+        this.mHandler.postDelayed(mRunnable, 5000);
     }
 
+    // KEEP REFRESHING THE ACTIVITY
+    private final Runnable mRunnable = new Runnable() {
+        @Override
+        public void run() {
+
+            // FETCH DATA FROM DATABASE
+            fetch_data();
+
+            park2.this.mHandler.postDelayed(mRunnable, 5000);
+        }
+    };
+
+    // STOP REFRESHING WHEN THE BACK BUTTON IS CALLED
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mHandler.removeCallbacks(mRunnable);
+        finish();
+    }
+
+    // SHOF INFO BOX
     private void showInfoDialog() {
         new AlertDialog.Builder(this)
                 .setIcon(R.drawable.ic_outline_info_24)
@@ -82,5 +122,71 @@ public class park2 extends AppCompatActivity {
         SharedPreferences.Editor editor = prefs.edit();
         editor.putBoolean("first_start", false);
         editor.apply();
+    }
+
+    // FETCH DATA
+    private void fetch_data() {
+        StringRequest string_request = new StringRequest(Request.Method.GET, API_URL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+
+                            JSONArray parking_data = new JSONArray(response);
+                            for (int i=0; i<parking_data.length(); i++){
+                                JSONObject parking_data_object = parking_data.getJSONObject(i);
+
+                                int id = parking_data_object.getInt("id");
+                                String establishment_id = parking_data_object.getString(
+                                        "establishment_id");
+                                String slot_1 = parking_data_object.getString("slot_1");
+                                String slot_2 = parking_data_object.getString("slot_2");
+                                String slot_3 = parking_data_object.getString("slot_3");
+                                String slot_4 = parking_data_object.getString("slot_4");
+
+                                if(id == 2){
+                                    TextView park_space_1 = findViewById(R.id.park_space_1);
+                                    TextView park_space_2 = findViewById(R.id.park_space_2);
+                                    TextView park_space_3 = findViewById(R.id.park_space_3);
+                                    TextView park_space_4 = findViewById(R.id.park_space_4);
+                                    if(slot_1.equals("AVAILABLE")){
+                                        park_space_1.setBackgroundResource(R.drawable.park_state_available);
+                                    }
+                                    else{
+                                        park_space_1.setBackgroundResource(R.drawable.park_state_unavailable);
+                                    }
+                                    if(slot_2.equals("AVAILABLE")){
+                                        park_space_2.setBackgroundResource(R.drawable.park_state_available);
+                                    }
+                                    else{
+                                        park_space_2.setBackgroundResource(R.drawable.park_state_unavailable);
+                                    }
+                                    if(slot_3.equals("AVAILABLE")){
+                                        park_space_3.setBackgroundResource(R.drawable.park_state_available);
+                                    }
+                                    else{
+                                        park_space_3.setBackgroundResource(R.drawable.park_state_unavailable);
+                                    }
+                                    if(slot_4.equals("AVAILABLE")){
+                                        park_space_4.setBackgroundResource(R.drawable.park_state_available);
+                                    }
+                                    else{
+                                        park_space_4.setBackgroundResource(R.drawable.park_state_unavailable);
+                                    }
+                                }
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(park2.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+        Volley.newRequestQueue(this).add(string_request);
     }
 }
