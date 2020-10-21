@@ -34,7 +34,7 @@ import java.util.logging.LogRecord;
 
 public class park1 extends AppCompatActivity {
 
-    private static final String API_URL= "http://192.168.1.3/practice/android_api/api.php";
+    private static final String API_URL= "http://192.168.1.3/practice/parking_system/android_api/api.php";
     private Handler mHandler = new Handler();
 
     @Override
@@ -180,10 +180,12 @@ public class park1 extends AppCompatActivity {
                         }
 
                     }
-                }, new Response.ErrorListener() {
+                }, 
+                // IF THERE IS AN ERROR SHOW A TOAST ERROR
+                new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(park1.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(park1.this, "Error Fetching Data!" + error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
         Volley.newRequestQueue(this).add(string_request);

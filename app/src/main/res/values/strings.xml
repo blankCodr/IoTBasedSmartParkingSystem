@@ -2,6 +2,7 @@
     <string name="app_name">EGG</string>
     <string name="title_activity_park1">Bernabe Shopping Mall</string>
     <string name="title_activity_park2">Dutdutan Building</string>
+
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
@@ -12,5 +13,12 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="revert_sign">Revert Sign</string>
     <string name="info_dialog_box">info_dialog_box</string>
+
+    <!-- CUSTOM POPUP -->
+    <string name="Ok">Ok</string>
+    <string name="Info_1">The parking space is AVAILABLE when its color is GREEN.</string>
+    <string name="Info_2">The parking space is OCCUPPIED/UNAVAILABLE when its color is RED.</string>
+    <string name="Info_3">The ARROWS are used to show the traffic flow inside the parking lot.</string>
+    <string name="info_title">INFO</string>
 
 </resources>

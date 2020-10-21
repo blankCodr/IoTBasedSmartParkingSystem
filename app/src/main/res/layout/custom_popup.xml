@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_height="475dp"
+    android:layout_width="350dp"
+    android:background="@color/dark_blue"
+    android:padding="5dp"
+    android:layout_gravity="center">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp">
+
+        <TextView
+            android:id="@+id/info_title_textView"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/info_title"
+            android:textSize="25sp"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/green_circle"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/info_title_textView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/green_circle">
+        </TextView>
+
+        <TextView
+            android:id="@+id/info1_textView"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:text="@string/Info_1"
+            android:textColor="@color/white"
+            android:layout_toEndOf="@+id/green_circle"
+            android:layout_toRightOf="@+id/green_circle"
+            android:layout_alignBottom="@+id/green_circle"
+            android:layout_below="@+id/info_title_textView">
+        </TextView>
+
+        <TextView
+            android:id="@+id/red_circle"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/green_circle"
+            android:background="@drawable/red_circle">
+        </TextView>
+
+        <TextView
+            android:id="@+id/info2_textView"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:text="@string/Info_2"
+            android:textColor="@color/white"
+            android:layout_toEndOf="@+id/green_circle"
+            android:layout_toRightOf="@+id/green_circle"
+            android:layout_alignTop="@+id/red_circle"
+            android:layout_alignBottom="@+id/red_circle">
+        </TextView>
+
+        <TextView
+            android:id="@+id/downward_arrow"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/red_circle"
+            android:background="@drawable/ic_baseline_arrow_downward_24"/>
+        <TextView
+            android:id="@+id/info3_textView"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:text="@string/Info_3"
+            android:textColor="@color/white"
+            android:layout_toEndOf="@+id/green_circle"
+            android:layout_toRightOf="@+id/green_circle"
+            android:layout_alignBottom="@+id/downward_arrow"
+            android:layout_alignTop="@+id/downward_arrow"
+            android:layout_below="@+id/info2_textView"/>
+
+        <Button
+            android:id="@+id/ok_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_style"
+            android:text="@string/Ok"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            />
+    </RelativeLayout>
+</LinearLayout>
