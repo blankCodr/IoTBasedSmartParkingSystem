@@ -1,11 +1,14 @@
 package com.example.egg;
 
+import android.app.Dialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import com.android.volley.Request;
@@ -23,6 +26,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,6 +41,8 @@ public class park1 extends AppCompatActivity {
     private static final String API_URL= "http://192.168.1.3/practice/parking_system/android_api/api.php";
     private Handler mHandler = new Handler();
 
+    Dialog custom_dialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +56,7 @@ public class park1 extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
         boolean first_start = prefs.getBoolean("first_start", true);
 
+        custom_dialog = new Dialog(this);
         if (first_start){
             showInfoDialog();
         }
@@ -109,6 +116,20 @@ public class park1 extends AppCompatActivity {
         super.onPause();
         mHandler.removeCallbacks(mRunnable);
         finish();
+    }
+
+    private void show_custom_popup(View v){
+        Button button_ok;
+        custom_dialog.setContentView(R.layout.custom_popup);
+        button_ok = custom_dialog.findViewById(R.id.ok_button);
+        button_ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                custom_dialog.cancel();
+            }
+        });
+        custom_dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        custom_dialog.show();
     }
 
     // INFO BOX
