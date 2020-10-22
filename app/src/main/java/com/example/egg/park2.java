@@ -1,8 +1,11 @@
 package com.example.egg;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import com.android.volley.Request;
@@ -20,6 +23,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.os.Handler;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,12 +36,19 @@ public class park2 extends AppCompatActivity {
     private static final String API_URL= "http://192.168.1.3/practice/parking_system/android_api/api.php";
     private Handler mHandler = new Handler();
 
+    Dialog custom_dialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_park2);
+
+        // TOOLBAR UP TOP
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        // FOR CUSTOM POPUP
+        custom_dialog = new Dialog(this);
 
         // INFO FOR FIRST TIME OPENING THE APP
         SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
@@ -46,28 +57,6 @@ public class park2 extends AppCompatActivity {
         if (first_start){
             showInfoDialog();
         }
-
-        // INFO BUTTON
-        FloatingActionButton info = findViewById(R.id.info_fab);
-        info.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(park2.this);
-
-                builder.setCancelable(true);
-                builder.setIcon(R.drawable.ic_outline_info_24);
-                builder.setTitle("Info");
-                builder.setMessage("Click the return button to return bitch");
-
-                builder.setNegativeButton("Ok", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
-                    }
-                });
-                builder.show();
-            }
-        });
 
         // RETURN BUTTON
         FloatingActionButton fab = findViewById(R.id.return_fab);
@@ -104,24 +93,38 @@ public class park2 extends AppCompatActivity {
         finish();
     }
 
-    // SHOF INFO BOX
+    // CUSTOM POP-UP WHEN FIRST OPENING THE APP
     private void showInfoDialog() {
-        new AlertDialog.Builder(this)
-                .setIcon(R.drawable.ic_outline_info_24)
-                .setTitle("Info")
-                .setMessage("Click the return button to return bitch!")
-                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
-                    }
-                })
-                .create()
-                .show();
+        Button button_ok;
+        custom_dialog.setContentView(R.layout.custom_popup);
+        button_ok = custom_dialog.findViewById(R.id.ok_button);
+        button_ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                custom_dialog.cancel();
+            }
+        });
+        custom_dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        custom_dialog.show();
         SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putBoolean("first_start", false);
         editor.apply();
+    }
+
+    // SHOW CUSTOM POPUP WHEN BUTTON IS CLICK
+    public void show_custom_popup(View view) {
+        Button button_ok;
+        custom_dialog.setContentView(R.layout.custom_popup);
+        button_ok = custom_dialog.findViewById(R.id.ok_button);
+        button_ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                custom_dialog.cancel();
+            }
+        });
+        custom_dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        custom_dialog.show();
     }
 
     // FETCH DATA

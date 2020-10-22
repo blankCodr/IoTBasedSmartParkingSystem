@@ -52,36 +52,17 @@ public class park1 extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        // FOR CUSTOM POPUP
+        custom_dialog = new Dialog(this);
+
+
         // OPEN THE INFO DIALOG FOR FIRST TIME OPENING THE APP
         SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
         boolean first_start = prefs.getBoolean("first_start", true);
 
-        custom_dialog = new Dialog(this);
         if (first_start){
             showInfoDialog();
         }
-
-        // INFO BUTTON
-        FloatingActionButton info = findViewById(R.id.info_fab);
-        info.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(park1.this);
-
-                builder.setCancelable(true);
-                builder.setIcon(R.drawable.ic_outline_info_24);
-                builder.setTitle("Info");
-                builder.setMessage("Click the return button to return bitch");
-
-                builder.setNegativeButton("Ok", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
-                    }
-                });
-                builder.show();
-            }
-        });
 
         // RETURN BUTTON
         FloatingActionButton back = findViewById(R.id.return_fab);
@@ -118,7 +99,9 @@ public class park1 extends AppCompatActivity {
         finish();
     }
 
-    private void show_custom_popup(View v){
+
+    // CUSTOM POP-UP WHEN FIRST OPENING THE APP
+    private void showInfoDialog() {
         Button button_ok;
         custom_dialog.setContentView(R.layout.custom_popup);
         button_ok = custom_dialog.findViewById(R.id.ok_button);
@@ -130,26 +113,25 @@ public class park1 extends AppCompatActivity {
         });
         custom_dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         custom_dialog.show();
-    }
-
-    // INFO BOX
-    private void showInfoDialog() {
-        new AlertDialog.Builder(this)
-                .setIcon(R.drawable.ic_outline_info_24)
-                .setTitle("Info")
-                .setMessage("Click the return button to return bitch!")
-                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
-                    }
-                })
-                .create()
-                .show();
         SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putBoolean("first_start", false);
         editor.apply();
+    }
+
+    // SHOW CUSTOM POPUP WHEN BUTTON IS CLICK
+    public void show_custom_popup(View view) {
+        Button button_ok;
+        custom_dialog.setContentView(R.layout.custom_popup);
+        button_ok = custom_dialog.findViewById(R.id.ok_button);
+        button_ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                custom_dialog.cancel();
+            }
+        });
+        custom_dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        custom_dialog.show();
     }
 
     // FETCH DATA
@@ -211,4 +193,5 @@ public class park1 extends AppCompatActivity {
         });
         Volley.newRequestQueue(this).add(string_request);
     }
+
 }

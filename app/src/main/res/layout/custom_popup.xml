@@ -38,6 +38,7 @@
             android:id="@+id/info1_textView"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
+            android:padding="6dp"
             android:gravity="center"
             android:text="@string/Info_1"
             android:textColor="@color/white"
@@ -51,7 +52,7 @@
             android:id="@+id/red_circle"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_below="@+id/green_circle"
             android:background="@drawable/red_circle">
         </TextView>
@@ -73,7 +74,7 @@
             android:id="@+id/downward_arrow"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_below="@+id/red_circle"
             android:background="@drawable/ic_baseline_arrow_downward_24"/>
         <TextView
@@ -89,12 +90,20 @@
             android:layout_alignTop="@+id/downward_arrow"
             android:layout_below="@+id/info2_textView"/>
 
-        <Button
+        <TextView
+            android:layout_height="150dp"
+            android:layout_width="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/info3_textView"
+            android:background="@drawable/egg_image"/>
+
+        <android.widget.Button
             android:id="@+id/ok_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_style"
             android:text="@string/Ok"
+            android:textColor="@color/white"
+            android:background="@drawable/button_style"
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
             />
