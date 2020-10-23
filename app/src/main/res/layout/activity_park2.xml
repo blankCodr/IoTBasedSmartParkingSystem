@@ -102,7 +102,9 @@
                 android:layout_width="@dimen/arrow_size"
                 android:layout_height="@dimen/arrow_size"
                 android:rotation="90"
-                android:layout_margin="@dimen/arrow_margin"
+                android:layout_marginRight="@dimen/arrow_margin"
+                android:layout_marginEnd="@dimen/arrow_margin"
+                android:layout_marginBottom="@dimen/arrow_margin"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
@@ -120,7 +122,6 @@
                 android:layout_marginTop="2.5dp"
                 android:layout_marginRight="5dp"
                 android:layout_marginEnd="5dp"
-                android:gravity="center"
                 android:orientation="vertical">
 
                 <TextView
