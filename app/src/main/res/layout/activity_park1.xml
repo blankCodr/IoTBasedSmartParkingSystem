@@ -11,6 +11,7 @@
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/info_fab"
         android:onClick="show_custom_popup"
+        app:backgroundTint="@color/lighter_green"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
@@ -20,6 +21,7 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/return_fab"
+        app:backgroundTint="@color/lighter_green"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
@@ -49,52 +51,52 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/gray"
-            android:layout_marginBottom="@dimen/relative_layout_margin_vertical">
+            android:layout_marginBottom="@dimen/relative_layout_margin_vertical"
+            android:background="@color/gray">
 
             <LinearLayout
                 android:id="@id/linear_layout_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_toEndOf="@id/arrow_1"
-                android:layout_toRightOf="@id/arrow_1">
+                android:layout_toRightOf="@id/arrow_1"
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/box1"
-                    android:layout_width="@dimen/box_size_park_1"
-                    android:layout_height="@dimen/box_size_park_1"
-                    android:textColor="@color/white"
-                    android:text="@string/box_1_parking_1_text"
-                    android:gravity="center"
-                    android:layout_marginTop="@dimen/arrow_margin"
-                    android:layout_marginLeft="@dimen/arrow_margin"
+                    android:layout_width="@dimen/box_size"
+                    android:layout_height="@dimen/box_size"
                     android:layout_marginStart="@dimen/arrow_margin"
-                    android:background="@drawable/box_style" />
+                    android:layout_marginLeft="@dimen/arrow_margin"
+                    android:layout_marginTop="@dimen/arrow_margin"
+                    android:background="@drawable/box_style"
+                    android:gravity="center"
+                    android:text="@string/box_1_parking_1_text"
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/box2"
-                    android:layout_width="@dimen/box_size_park_1"
-                    android:layout_height="@dimen/box_size_park_1"
-                    android:textColor="@color/white"
-                    android:text="@string/box_2_parking_1_text"
-                    android:gravity="center"
+                    android:layout_width="@dimen/box_size"
+                    android:layout_height="@dimen/box_size"
                     android:layout_marginStart="5dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="@dimen/arrow_margin"
-                    android:background="@drawable/box_style"/>
+                    android:background="@drawable/box_style"
+                    android:gravity="center"
+                    android:text="@string/box_2_parking_1_text"
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/box3"
-                    android:layout_width="@dimen/box_size_park_1"
-                    android:layout_height="@dimen/box_size_park_1"
-                    android:textColor="@color/red"
-                    android:text="@string/box_3_parking_1_text"
-                    android:gravity="center"
+                    android:layout_width="@dimen/box_size"
+                    android:layout_height="@dimen/box_size"
                     android:layout_marginStart="5dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="@dimen/arrow_margin"
-                    android:background="@drawable/box_style_off_limits" />
+                    android:background="@drawable/box_style_off_limits"
+                    android:gravity="center"
+                    android:text="@string/box_3_parking_1_text"
+                    android:textColor="@color/red" />
 
             </LinearLayout>
 
@@ -103,44 +105,46 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_margin="@dimen/arrow_margin"
-                android:background="@drawable/ic_baseline_arrow_downward_24"/>
+                android:background="@drawable/ic_baseline_arrow_downward_24" />
 
             <TextView
                 android:id="@+id/arrow_2"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_margin="@dimen/arrow_margin"
-                android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
                 android:layout_alignParentBottom="true"
                 android:layout_gravity="bottom"
+                android:layout_margin="@dimen/arrow_margin"
                 android:background="@drawable/ic_baseline_arrow_downward_24" />
 
             <TextView
-                android:id="@+id/park_space_1"
+                android:id="@+id/park_1_space_1"
                 android:layout_width="@dimen/park_space_width"
                 android:layout_height="@dimen/park_space_height"
+                android:layout_above="@id/park_1_space_2"
                 android:layout_alignStart="@+id/linear_layout_1"
                 android:layout_alignLeft="@+id/linear_layout_1"
-                android:layout_above="@id/park_space_2"
+                android:layout_marginStart="@dimen/arrow_margin"
+                android:layout_marginLeft="@dimen/arrow_margin"
                 android:background="@drawable/park_state_available" />
 
             <TextView
-                android:id="@+id/park_space_2"
+                android:id="@+id/park_1_space_2"
                 android:layout_width="@dimen/park_space_width"
                 android:layout_height="@dimen/park_space_height"
-                android:layout_above="@id/park_space_3"
-                android:layout_alignStart="@+id/linear_layout_1"
-                android:layout_alignLeft="@+id/linear_layout_1"
+                android:layout_above="@id/park_1_space_3"
+                android:layout_alignStart="@+id/park_1_space_1"
+                android:layout_alignLeft="@+id/park_1_space_1"
                 android:background="@drawable/park_state_available" />
 
             <TextView
-                android:id="@+id/park_space_3"
+                android:id="@+id/park_1_space_3"
                 android:layout_width="@dimen/park_space_width"
                 android:layout_height="@dimen/park_space_height"
-                android:layout_alignStart="@+id/linear_layout_1"
-                android:layout_alignLeft="@+id/linear_layout_1"
                 android:layout_above="@id/linear_layout_2"
+                android:layout_alignStart="@+id/park_1_space_1"
+                android:layout_alignLeft="@+id/park_1_space_1"
                 android:layout_marginBottom="40dp"
                 android:background="@drawable/park_state_available" />
 
@@ -148,53 +152,65 @@
                 android:id="@+id/linear_layout_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
                 android:layout_toEndOf="@id/arrow_2"
                 android:layout_toRightOf="@id/arrow_2"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="10dp">
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/box4"
-                    android:layout_width="@dimen/box_size_park_1"
-                    android:layout_height="@dimen/box_size_park_1"
-                    android:textColor="@color/white"
-                    android:text="@string/box_1_parking_1_text"
-                    android:gravity="center"
-                    android:layout_marginTop="@dimen/arrow_margin"
-                    android:layout_marginLeft="@dimen/arrow_margin"
+                    android:layout_width="@dimen/box_size"
+                    android:layout_height="@dimen/box_size"
                     android:layout_marginStart="@dimen/arrow_margin"
-                    android:background="@drawable/box_style" />
+                    android:layout_marginLeft="@dimen/arrow_margin"
+                    android:layout_marginTop="@dimen/arrow_margin"
+                    android:background="@drawable/box_style"
+                    android:gravity="center"
+                    android:text="@string/box_1_parking_1_text"
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/box5"
-                    android:layout_width="@dimen/box_size_park_1"
-                    android:layout_height="@dimen/box_size_park_1"
-                    android:textColor="@color/white"
-                    android:text="@string/box_5_parking_1_text"
-                    android:gravity="center"
+                    android:layout_width="@dimen/box_size"
+                    android:layout_height="@dimen/box_size"
                     android:layout_marginStart="5dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="@dimen/arrow_margin"
-                    android:background="@drawable/box_style" />
+                    android:background="@drawable/box_style"
+                    android:gravity="center"
+                    android:text="@string/box_5_parking_1_text"
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/box6"
-                    android:layout_width="@dimen/box_size_park_1"
-                    android:layout_height="@dimen/box_size_park_1"
-                    android:textColor="@color/white"
-                    android:text="@string/box_6_parking_1_text"
-                    android:gravity="center"
+                    android:layout_width="@dimen/box_size"
+                    android:layout_height="@dimen/box_size"
                     android:layout_marginStart="5dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="@dimen/arrow_margin"
-                    android:background="@drawable/box_style" />
+                    android:background="@drawable/box_style"
+                    android:gravity="center"
+                    android:text="@string/box_6_parking_1_text"
+                    android:textColor="@color/white" />
 
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/box_7"
+                android:layout_width="77.5dp"
+                android:layout_height="240dp"
+                android:layout_above="@id/linear_layout_2"
+                android:layout_alignEnd="@+id/linear_layout_2"
+                android:layout_alignRight="@+id/linear_layout_2"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/box_style_off_limits"
+                android:gravity="center"
+                android:text="@string/box_7_parking_1_text"
+                android:textColor="@color/red" />
 
         </RelativeLayout>
 
     </LinearLayout>
-
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

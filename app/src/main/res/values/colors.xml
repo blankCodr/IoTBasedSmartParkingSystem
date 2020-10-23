@@ -13,5 +13,5 @@
     <color name="available">#07CA01</color>
     <color name="unavailable">#F44336</color>
     <color name="dark_blue">#2F333F</color>
-
+    <color name="test">#009879</color>
 </resources>

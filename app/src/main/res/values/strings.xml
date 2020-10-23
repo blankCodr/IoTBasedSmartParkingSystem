@@ -22,8 +22,9 @@
     <string name="info_title">INFO</string>
     <string name="box_1_parking_1_text">Office</string>
     <string name="box_2_parking_1_text">Lounge</string>
-    <string name="box_3_parking_1_text">Electrical</string>
+    <string name="box_3_parking_1_text">Off Limits</string>
     <string name="box_5_parking_1_text">Elevator</string>
     <string name="box_6_parking_1_text">Rest Room</string>
+    <string name="box_7_parking_1_text">Off Limits</string>
 
 </resources>

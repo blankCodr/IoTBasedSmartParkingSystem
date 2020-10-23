@@ -3,6 +3,8 @@
     <dimen name="relative_layout_margin_vertical">80dp</dimen>
     <dimen name="arrow_margin">10dp</dimen>
     <dimen name="park_space_height">80dp</dimen>
+    <dimen name="park_space_height_2">77.5dp</dimen>
     <dimen name="park_space_width">160dp</dimen>
-    <dimen name="box_size_park_1">77.5dp</dimen>
+    <dimen name="box_size">77.5dp</dimen>
+    <dimen name="arrow_size">75dp</dimen>
 </resources>

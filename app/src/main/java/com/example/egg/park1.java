@@ -1,11 +1,7 @@
 package com.example.egg;
 
 import android.app.Dialog;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -16,15 +12,12 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.os.Handler;
-import android.os.HandlerThread;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -33,8 +26,6 @@ import android.widget.Toast;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.logging.LogRecord;
 
 public class park1 extends AppCompatActivity {
 
@@ -76,7 +67,7 @@ public class park1 extends AppCompatActivity {
 
         // RUN THIS LINE OF CODES TO UPDATE
         this.mHandler = new Handler();
-        this.mHandler.postDelayed(mRunnable, 5000);
+        this.mHandler.postDelayed(mRunnable, 2500);
     }
 
     // KEEP REFRESHING THE ACTIVITY
@@ -87,7 +78,7 @@ public class park1 extends AppCompatActivity {
             // FETCH DATA FROM DATABASE
             fetch_data();
 
-            park1.this.mHandler.postDelayed(mRunnable, 5000);
+            park1.this.mHandler.postDelayed(mRunnable, 2500);
         }
     };
 
@@ -154,9 +145,9 @@ public class park1 extends AppCompatActivity {
                                 String slot_3 = parking_data_object.getString("slot_3");
 
                                 if(id == 1){
-                                    TextView park_space_1 = findViewById(R.id.park_space_1);
-                                    TextView park_space_2 = findViewById(R.id.park_space_2);
-                                    TextView park_space_3 = findViewById(R.id.park_space_3);
+                                    TextView park_space_1 = findViewById(R.id.park_1_space_1);
+                                    TextView park_space_2 = findViewById(R.id.park_1_space_2);
+                                    TextView park_space_3 = findViewById(R.id.park_1_space_3);
                                     if(slot_1.equals("AVAILABLE")){
                                         park_space_1.setBackgroundResource(R.drawable.park_state_available);
                                     }
