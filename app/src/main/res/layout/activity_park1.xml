@@ -11,7 +11,7 @@
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/info_fab"
         android:onClick="show_custom_popup"
-        app:backgroundTint="@color/lighter_green"
+        app:backgroundTint="@color/available"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
@@ -21,7 +21,7 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/return_fab"
-        app:backgroundTint="@color/lighter_green"
+        app:backgroundTint="@color/available"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
@@ -127,6 +127,7 @@
                 android:layout_alignLeft="@+id/linear_layout_1"
                 android:layout_marginStart="@dimen/arrow_margin"
                 android:layout_marginLeft="@dimen/arrow_margin"
+                android:layout_marginBottom="2.5dp"
                 android:background="@drawable/park_state_available" />
 
             <TextView
@@ -136,6 +137,7 @@
                 android:layout_above="@id/park_1_space_3"
                 android:layout_alignStart="@+id/park_1_space_1"
                 android:layout_alignLeft="@+id/park_1_space_1"
+                android:layout_marginBottom="2.5dp"
                 android:background="@drawable/park_state_available" />
 
             <TextView
@@ -145,7 +147,7 @@
                 android:layout_above="@id/linear_layout_2"
                 android:layout_alignStart="@+id/park_1_space_1"
                 android:layout_alignLeft="@+id/park_1_space_1"
-                android:layout_marginBottom="40dp"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/park_state_available" />
 
             <LinearLayout
@@ -199,11 +201,12 @@
             <TextView
                 android:id="@+id/box_7"
                 android:layout_width="77.5dp"
-                android:layout_height="240dp"
+                android:layout_height="wrap_content"
                 android:layout_above="@id/linear_layout_2"
+                android:layout_alignTop="@+id/park_1_space_1"
                 android:layout_alignEnd="@+id/linear_layout_2"
                 android:layout_alignRight="@+id/linear_layout_2"
-                android:layout_marginBottom="40dp"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/box_style_off_limits"
                 android:gravity="center"
                 android:text="@string/box_7_parking_1_text"

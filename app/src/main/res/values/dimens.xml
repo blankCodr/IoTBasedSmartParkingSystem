@@ -6,5 +6,6 @@
     <dimen name="park_space_height_2">77.5dp</dimen>
     <dimen name="park_space_width">160dp</dimen>
     <dimen name="box_size">77.5dp</dimen>
+    <dimen name="arrow_margin_2">5dp</dimen>
     <dimen name="arrow_size">75dp</dimen>
 </resources>
