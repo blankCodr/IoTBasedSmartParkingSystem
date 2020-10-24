@@ -59,6 +59,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/arrow_1"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:layout_toRightOf="@id/arrow_1"
                 android:orientation="horizontal">
 
@@ -204,9 +206,11 @@
                 android:layout_height="wrap_content"
                 android:layout_above="@id/linear_layout_2"
                 android:layout_alignTop="@+id/park_1_space_1"
-                android:layout_alignEnd="@+id/linear_layout_2"
-                android:layout_alignRight="@+id/linear_layout_2"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
                 android:layout_marginBottom="20dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginEnd="5dp"
                 android:background="@drawable/box_style_off_limits"
                 android:gravity="center"
                 android:text="@string/box_7_parking_1_text"
