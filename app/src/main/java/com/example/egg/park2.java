@@ -43,7 +43,7 @@ public class park2 extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // FOR CUSTOM POPUP
+        // INFO POPUP
         custom_dialog = new Dialog(this);
 
         // INFO FOR FIRST TIME OPENING THE APP

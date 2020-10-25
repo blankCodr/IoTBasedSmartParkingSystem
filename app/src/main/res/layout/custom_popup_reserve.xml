@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_height="200dp"
+    android:layout_width="350dp"
+    android:background="@color/dark_blue"
+    android:padding="5dp"
+    android:layout_gravity="center">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:id="@+id/info_title_textView"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/info_title_reserve"
+            android:textSize="25sp"
+            android:textStyle="italic"
+            android:textColor="@color/lighter_green"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/reserve_text_view_1"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/this_parking_space_is_available"
+            android:layout_below="@+id/info_title_textView"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/reserve_text_view_2"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/do_you_want_to_reserve_this_parking_space"
+            android:layout_below="@+id/reserve_text_view_1"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:gravity="center"/>
+
+        <android.widget.Button
+            android:id="@+id/proceed_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_alignParentBottom="true"
+            android:text="@string/proceed"
+            android:textColor="@color/white"
+            android:background="@drawable/button_style"/>
+
+        <android.widget.Button
+            android:id="@+id/cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:text="@string/cancel"
+            android:textColor="@color/white"
+            android:background="@drawable/button_style"/>
+    </RelativeLayout>
+</LinearLayout>

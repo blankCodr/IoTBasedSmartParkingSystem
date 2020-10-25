@@ -43,9 +43,8 @@ public class park1 extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // FOR CUSTOM POPUP
+        // INFO POPUP
         custom_dialog = new Dialog(this);
-
 
         // OPEN THE INFO DIALOG FOR FIRST TIME OPENING THE APP
         SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
@@ -68,6 +67,59 @@ public class park1 extends AppCompatActivity {
         // RUN THIS LINE OF CODES TO UPDATE
         this.mHandler = new Handler();
         this.mHandler.postDelayed(mRunnable, 2500);
+
+        // TEXTVIEW AS BUTTON
+        TextView txt_view_1 = findViewById(R.id.park_1_space_1);
+        TextView txt_view_2 = findViewById(R.id.park_1_space_2);
+        TextView txt_view_3 = findViewById(R.id.park_1_space_3);
+        txt_view_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Button button_cancel;
+                custom_dialog.setContentView(R.layout.custom_popup_reserve);
+                button_cancel = custom_dialog.findViewById(R.id.cancel_button);
+                button_cancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        custom_dialog.cancel();
+                    }
+                });
+                custom_dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                custom_dialog.show();
+            }
+        });
+        txt_view_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Button button_cancel;
+                custom_dialog.setContentView(R.layout.custom_popup_reserve);
+                button_cancel = custom_dialog.findViewById(R.id.cancel_button);
+                button_cancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        custom_dialog.cancel();
+                    }
+                });
+                custom_dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                custom_dialog.show();
+            }
+        });
+        txt_view_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Button button_cancel;
+                custom_dialog.setContentView(R.layout.custom_popup_reserve);
+                button_cancel = custom_dialog.findViewById(R.id.cancel_button);
+                button_cancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        custom_dialog.cancel();
+                    }
+                });
+                custom_dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                custom_dialog.show();
+            }
+        });
     }
 
     // KEEP REFRESHING THE ACTIVITY
@@ -89,7 +141,6 @@ public class park1 extends AppCompatActivity {
         mHandler.removeCallbacks(mRunnable);
         finish();
     }
-
 
     // CUSTOM POP-UP WHEN FIRST OPENING THE APP
     private void showInfoDialog() {

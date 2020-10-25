@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                     String item = parent.getItemAtPosition(position).toString();
 
                     //Show Selected Spinner Item using Toast
-                    Toast.makeText(parent.getContext(), "Selected Parking Lot: " + item, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(parent.getContext(), "Selected Parking Lot: " + item, Toast.LENGTH_SHORT).show();
 
                     // ANYTHING YOU WANT TO ADD
 
@@ -77,5 +77,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent exit_app = new Intent(Intent.ACTION_MAIN);
+        exit_app.addCategory(Intent.CATEGORY_HOME);
+        exit_app.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(exit_app);
+        finish();
     }
 }

@@ -20,11 +20,21 @@
     <string name="Info_2">The parking space is OCCUPPIED/UNAVAILABLE when the color is RED.</string>
     <string name="Info_3">The ARROWS are used to show the traffic flow inside the parking lot.</string>
     <string name="info_title">INFO</string>
+
+    <!-- PARKING LINGO -->
     <string name="box_1_parking_1_text">Office</string>
     <string name="box_2_parking_1_text">Lounge</string>
     <string name="box_3_parking_1_text">Off Limits</string>
     <string name="box_5_parking_1_text">Elevator</string>
     <string name="box_6_parking_1_text">Rest Room</string>
     <string name="box_7_parking_1_text">Off Limits</string>
+
+    <!-- CUSTOM POPUP RESERVE -->
+    <string name="info_title_reserve">RESERVATION</string>
+    <string name="evolution_of_egg">Evolution of Egg</string>
+    <string name="this_parking_space_is_available">This parking space is AVAILABLE</string>
+    <string name="do_you_want_to_reserve_this_parking_space">Do you want to reserve this parking space?</string>
+    <string name="proceed">Proceed</string>
+    <string name="cancel">Cancel</string>
 
 </resources>
