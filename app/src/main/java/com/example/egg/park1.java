@@ -68,22 +68,31 @@ public class park1 extends AppCompatActivity {
         this.mHandler = new Handler();
         this.mHandler.postDelayed(mRunnable, 2500);
 
-        // TEXTVIEW AS BUTTON
+        // TEXT VIEW AS BUTTON
         TextView txt_view_1 = findViewById(R.id.park_1_space_1);
         TextView txt_view_2 = findViewById(R.id.park_1_space_2);
         TextView txt_view_3 = findViewById(R.id.park_1_space_3);
+
+        // PARKING SPACE 1
         txt_view_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Button button_cancel;
-                custom_dialog.setContentView(R.layout.custom_popup_reserve);
-                button_cancel = custom_dialog.findViewById(R.id.cancel_button);
-                button_cancel.setOnClickListener(new View.OnClickListener() {
+                Button cancel_button, proceed_button;
+                TextView park_space_1 = findViewById(R.id.park_1_space_1);
+                custom_dialog.setContentView(R.layout.custom_popup_reserve_available);
+                cancel_button = custom_dialog.findViewById(R.id.cancel_button);
+                proceed_button = custom_dialog.findViewById(R.id.proceed_button);
+
+                // CANCEL
+                cancel_button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         custom_dialog.cancel();
                     }
                 });
+
+                // PROCEED
+
                 custom_dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 custom_dialog.show();
             }
@@ -92,7 +101,7 @@ public class park1 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Button button_cancel;
-                custom_dialog.setContentView(R.layout.custom_popup_reserve);
+                custom_dialog.setContentView(R.layout.custom_popup_reserve_available);
                 button_cancel = custom_dialog.findViewById(R.id.cancel_button);
                 button_cancel.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -108,7 +117,7 @@ public class park1 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Button button_cancel;
-                custom_dialog.setContentView(R.layout.custom_popup_reserve);
+                custom_dialog.setContentView(R.layout.custom_popup_reserve_available);
                 button_cancel = custom_dialog.findViewById(R.id.cancel_button);
                 button_cancel.setOnClickListener(new View.OnClickListener() {
                     @Override
