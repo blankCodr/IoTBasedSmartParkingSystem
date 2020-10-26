@@ -33,8 +33,10 @@
     <string name="info_title_reserve">RESERVATION</string>
     <string name="evolution_of_egg">Evolution of Egg</string>
     <string name="this_parking_space_is_available">This parking space is AVAILABLE</string>
+    <string name="this_parking_space_is_unavailable">This parking space is UNAVAILABLE</string>
     <string name="do_you_want_to_reserve_this_parking_space">Do you want to reserve this parking space?</string>
     <string name="proceed">Proceed</string>
     <string name="cancel">Cancel</string>
+    <string name="please_check_other_available_parking_space">Please check other available parking space.</string>
 
 </resources>

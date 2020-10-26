@@ -22,7 +22,7 @@
             android:text="@string/info_title_reserve"
             android:textSize="25sp"
             android:textStyle="italic"
-            android:textColor="@color/lighter_green"
+            android:textColor="@color/unavailable"
             android:layout_centerHorizontal="true"
             android:padding="5dp">
         </TextView>
@@ -31,7 +31,7 @@
             android:id="@+id/reserve_text_view_1"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="@string/this_parking_space_is_available"
+            android:text="@string/this_parking_space_is_unavailable"
             android:layout_below="@+id/info_title_textView"
             android:layout_centerHorizontal="true"
             android:layout_margin="2.55dp"
@@ -42,35 +42,21 @@
             android:id="@+id/reserve_text_view_2"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="@string/do_you_want_to_reserve_this_parking_space"
+            android:text="@string/please_check_other_available_parking_space"
             android:layout_below="@+id/reserve_text_view_1"
             android:layout_centerInParent="true"
             android:textColor="@color/white"
             android:gravity="center"/>
 
         <android.widget.Button
-            android:id="@+id/proceed_button"
+            android:id="@+id/ok_button_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
+            android:layout_centerInParent="true"
             android:layout_alignParentBottom="true"
-            android:text="@string/proceed"
+            android:text="@string/Ok"
             android:textColor="@color/white"
             android:background="@drawable/button_style"/>
 
-        <android.widget.Button
-            android:id="@+id/cancel_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:text="@string/cancel"
-            android:textColor="@color/white"
-            android:background="@drawable/button_style"
-            tools:ignore="RelativeOverlap" />
     </RelativeLayout>
 </LinearLayout>

@@ -46,7 +46,8 @@ public class MainActivity extends AppCompatActivity {
 
                 if (parent.getItemAtPosition(position).equals("Choose Parking Lot")) {
                     // If null is selected do nothing
-                } else {
+                }
+                else {
                     //selecting either of the two parking lot
                     String item = parent.getItemAtPosition(position).toString();
 
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                // TODO Auto-generated method stub
+                /* TODO Auto-generated method stub */
             }
         });
 
