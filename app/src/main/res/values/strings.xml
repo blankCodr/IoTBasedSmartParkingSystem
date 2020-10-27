@@ -39,4 +39,10 @@
     <string name="cancel">Cancel</string>
     <string name="please_check_other_available_parking_space">Please check other available parking space.</string>
 
+    <!-- LOGIN ACTIVITY -->
+    <string name="login">Login</string>
+    <string name="create_new_account">Create new account!</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+
 </resources>
