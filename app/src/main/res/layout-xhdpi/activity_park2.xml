@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".park2">
+
+    <include layout="@layout/content_park2" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/return_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:backgroundTint="@color/available"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@android:drawable/ic_menu_revert"
+        android:contentDescription="@string/revert_sign" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:onClick="show_custom_popup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:backgroundTint="@color/available"
+        android:layout_gravity="bottom"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@android:drawable/ic_menu_info_details"
+        android:contentDescription="@string/info_dialog_box" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/Theme.EGG.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/Theme.EGG.PopupOverlay" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/relative_layout_margin_vertical"
+            android:background="@color/gray">
+
+            <TextView
+                android:id="@+id/arrow_1"
+                android:rotation="180"
+                android:layout_width="@dimen/arrow_size"
+                android:layout_height="@dimen/arrow_size"
+                android:layout_margin="@dimen/arrow_margin"
+                android:background="@drawable/ic_baseline_arrow_downward_24" />
+
+            <TextView
+                android:id="@+id/box_1"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/box_size"
+                android:layout_toRightOf="@id/arrow_1"
+                android:layout_toEndOf="@id/arrow_1"
+                android:layout_alignRight="@id/arrow_3"
+                android:layout_alignEnd="@id/arrow_3"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/box_style" />
+
+            <TextView
+                android:id="@+id/box_2"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/box_size"
+                android:layout_above="@+id/arrow_3"
+                android:layout_alignRight="@+id/arrow_3"
+                android:layout_alignEnd="@+id/arrow_3"
+                android:layout_alignLeft="@+id/arrow_3"
+                android:layout_alignStart="@id/arrow_3"
+                android:layout_alignTop="@+id/park_2_space_1"
+                android:layout_alignBottom="@+id/park_2_space_4"
+                android:background="@drawable/box_style" />
+
+            <TextView
+                android:id="@+id/arrow_2"
+                android:layout_width="@dimen/arrow_size"
+                android:layout_height="@dimen/arrow_size"
+                android:rotation="90"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="@dimen/arrow_margin"
+                android:layout_marginStart="@dimen/arrow_margin"
+                android:background="@drawable/ic_baseline_subdirectory_arrow_left_24" />
+
+            <TextView
+                android:id="@+id/arrow_3"
+                android:layout_width="@dimen/arrow_size"
+                android:layout_height="@dimen/arrow_size"
+                android:rotation="90"
+                android:layout_marginRight="@dimen/arrow_margin"
+                android:layout_marginEnd="@dimen/arrow_margin"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
+                android:background="@drawable/ic_baseline_arrow_downward_24" />
+
+            <TextView
+                android:id="@+id/park_2_space_1"
+                android:layout_toLeftOf="@+id/box_2"
+                android:layout_toStartOf="@+id/box_2"
+                android:layout_below="@id/box_1"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="2.5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_width="@dimen/park_space_width"
+                android:layout_height="@dimen/park_space_height_2"
+                android:background="@drawable/park_state_available"/>
+
+            <TextView
+                android:id="@+id/park_2_space_2"
+                android:layout_width="@dimen/park_space_width"
+                android:layout_height="@dimen/park_space_height_2"
+                android:layout_below="@id/park_2_space_1"
+                android:layout_alignLeft="@id/park_2_space_1"
+                android:layout_alignStart="@id/park_2_space_1"
+                android:layout_marginBottom="2.5dp"
+                android:background="@drawable/park_state_available" />
+
+            <TextView
+                android:id="@+id/park_2_space_3"
+                android:layout_width="@dimen/park_space_width"
+                android:layout_height="@dimen/park_space_height_2"
+                android:layout_below="@id/park_2_space_2"
+                android:layout_alignLeft="@id/park_2_space_1"
+                android:layout_alignStart="@id/park_2_space_1"
+                android:layout_marginBottom="2.5dp"
+                android:background="@drawable/park_state_available"/>
+
+            <TextView
+                android:id="@+id/park_2_space_4"
+                android:layout_width="@dimen/park_space_width"
+                android:layout_height="@dimen/park_space_height_2"
+                android:layout_below="@id/park_2_space_3"
+                android:layout_alignLeft="@id/park_2_space_1"
+                android:layout_alignStart="@id/park_2_space_1"
+                android:background="@drawable/park_state_available"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

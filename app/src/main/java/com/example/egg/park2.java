@@ -32,7 +32,7 @@ public class park2 extends AppCompatActivity {
     public String slot_1, slot_2, slot_3, slot_4;
     public int id;
 
-    private static final String API_URL= "http://192.168.1.3/practice/parking_system/android_api/api.php";
+    private static final String API_URL= "http://192.168.1.7/practice/parking_system/android_api/api.php";
     private Handler mHandler = new Handler();
 
     Dialog custom_dialog;
